@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuciones de Probabilidad</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <p class="presentacion">Universidad Distrital Francisco José de Caldas <br> Hecho por Lizeth Jurany Mieles Mayorga <br> 20191020054</p>
+    <div class="wrap">
+        <ul class="tabs">
+            <li><a href="#tab1"><span class="fa fa-area-chart"></span><span class="tab-text"></span>Distribución Geométrica</span></a></li>
+            <li><a href="#tab2"><span class="fa fa-bar-chart"></span><span class="tab-text">Distribución Hipergeométrica</span></a></li>
+        </ul>
+        <div class="secciones">
+            <article id="tab1">
+                <h1>Distribución de Probabilidad Geométrica</h1>
+                <p> Suponga que se efectúa repetidamente un experimento o prueba, que las repeticiones son independientes y que se está interesado en la ocurrencia del éxito de la prueba, siendo la probabilidad de este suceso p. La distribución geométrica permite calcular la probabilidad de que tenga que realizarse un número y de repeticiones antes de obtener un éxito por primera vez; esta probabilidad decrece a medida que aumenta y con lo que la función de masa de probabilidad es siempre decreciente. («Distribuciones de Probabilidad», 2014).</p>
+                <p> Este tipo de probabilidad se encuentra dado por la formula: </p>
+                <img src="Image/formula1.png">
+                <p> Donde:</p>
+                <p class="explicacion"> 
+                    p = Probabilidad de que el evento suceda. <br> 
+                    q = Probabilidad de que el evento no suceda. <br> 
+                    y = En caso de que el evento suceda, denota el intento en el que sucede. <br>
+                    p(y) = Probabilidad de que el evento suceda en el intento numero y. <br>
+                </p>
+                <p>El comportamiento de este tipo de distribución permite obtener la media "E(Y)", la varianza "V(Y)" y la desviación estándar "s" de la probabilidad calculada a través de fórmulas predefinidas. </p>
+                <img class="m1" src="Image/media1.png">
+                <img class="v1" src="Image/varianza1.png" >
+                <img class="d1" src="Image/desviacion1.png" alt="">
+
+                <h3>Ejemplo Interactivo</h3>
+                <p class="text-ejercicio"> Nota: En el enunciado del siguiente ejemplo encontrara casillas de color amarillo que le permitiran escribir los datos con los que desea realizar el ejercicio.</p>
+                <h4>Enunciado</h4>
+                <p class="text-ejercicio"> Un contador público certificado (CPA, por sus siglas en inglés) ha encontrado que <input id="n1" type="number" placeholder="n1" > de 
+                    cada <input id="n2" type="number" placeholder="n2"> compañías auditadas contienen errores importantes. Si el CPA hace 
+                    auditoría a una serie de cuentas de empresas, ¿cuál es la probabilidad de que la primera cuenta que 
+                    contenga errores importantes sea la número <input id="n3" type="number" placeholder="y"> en ser auditada?. (Wackerly, Mendenhall & Scheaffer, 2008)
+                </p>
+
+                <input name="Calcular1" class="btn" type="button"  onClick="valorG()" value="Calcular" />
+
+                <h5>Datos</h5>
+                <input id="vari1" type="text" class="Variables"></input>
+                <input id="vari2" type="text" class="Variables"></input>
+                <input id="vari3" type="text" class="Variables"></input>
+
+                <h5>Resultados</h5>
+                <input id="PY1" type="text" class="res"></input>
+                <input id="EY1" type="text" class="res"></input>
+                <input id="VY1" type="text" class="res"></input>
+                <input id="s1" type="text" class="res"></input>
+
+                <h3>Gráfico</h3>
+                <canvas id=grafica1 width="200", height="100"></canvas>
+
+
+                <h2>Referencias</h2>
+                <p class="referencia">1. Distribuciones de Probabilidad. (2014). Distribución Geométrica, p 9. Recuperado 8 de enero de 2021, de Servizo Galego de Saúde website: <a href="https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf">https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf</a> </p>
+                <p class="referencia">2. Wackerly, D. D., Mendenhall, W., Scheaffer, R. L. (2008). Estadística matemática con aplicaciones (7.a ed.). Ejercicio 3.73, p 119</p>
+            </article>
+
+            <article id="tab2">
+                <h1>Distribución de Probabilidad Hipergeométrica</h1>
+                <p> La distribución hipergeométrica suele aparecer en procesos muestrales sin reemplazo, en los que se investiga la presencia o ausencia de cierta característica. Esta distribución se puede ilustrar de la siguiente forma: </p> 
+                <p> Se tiene una población finita con N elementos, de los cuales r tienen una determinada característica que se llama “éxito”. El número de “éxitos” en una muestra aleatoria de tamaño n, extraída sin reemplazo de la población, es una variable aleatoria con distribución hipergeométrica. («Distribuciones de Probabilidad», 2014). </p>
+                <p> Este tipo de probabilidad se encuentra dado por la formula: </p>
+                <img src="Image/formula2.png">
+                <p> Donde:</p>
+                <p class="explicacion"> 
+                    N = Cantidad total de opciones. <br> 
+                    n = Cantidad de opciones seleccionadas. <br> 
+                    r = Cantidad de objetos destacables. <br>
+                    y = En caso de tener objetos destacables, denota la cantidad que se tiene. <br>
+                    p(y) = Probabilidad de que el evento suceda en el objeto número y. <br>
+                </p>
+                <p>El comportamiento de este tipo de distribución permite obtener la media "E(Y)", la varianza "V(Y)" y la desviación estándar "s" de la probabilidad calculada a través de fórmulas predefinidas. </p>
+                <img class="m1" src="Image/media2.png">
+                <img class="v2" src="Image/varianza2.png">
+                <img class="d2" src="Image/desviacion2.png">
+
+                <h3>Ejemplo Interactivo</h3>
+                <p class="text-ejercicio"> Nota: En el enunciado del siguiente ejemplo encontrara casillas de color amarillo que le permitiran escribir los datos con los que desea realizar el ejercicio.</p>
+                <h4>Enunciado</h4>
+                <p class="text-ejercicio"> Un almacén contiene <input id="n4" type="number" placeholder="n1"> máquinas impresoras, 
+                    de las cuales, <input type="number" id="n5" placeholder="n2"> son defectuosas. Una compañía selecciona <input type="number" id="n6" placeholder="n3"> 
+                    de las máquinas al azar pensando que todas están en buenas condiciones. ¿Cuál es la probabilidad de que <input type="number" id="n7" placeholder="n4"> 
+                    maquinas sean defectuosas?
+
+                </p>
+
+                <input name="Calcular2" class="btn" type="button"  onClick="valorH()" value="Calcular" />
+
+                <h5>Datos</h5>
+                <input id="vari4" type="text" class="Variable"></input>
+                <input id="vari5" type="text" class="Variable"></input>
+                <input id="vari6" type="text" class="Variable"></input>
+                <input id="vari7" type="text" class="Variable"></input>
+
+                <h5>Resultados</h5>
+                <input id="PY2" type="text" class="res"></input>
+                <input id="EY2" type="text" class="res"></input>
+                <input id="VY2" type="text" class="res"></input>
+                <input id="s2" type="text" class="res"></input>
+
+                <h3>Gráfico</h3>
+                <canvas id=grafica2 width="200", height="100"></canvas>
+
+                <h2>Referencias</h2>
+                <p class="referencia">1. Distribuciones de Probabilidad. (2014). Distribución Geométrica, p 9. Recuperado 8 de enero de 2021, de Servizo Galego de Saúde website: <a href="https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf">https://www.sergas.es/Saude-publica/Documents/1899/Ayuda_Epidat_4_Distribuciones_de_probabilidad_Octubre2014.pdf</a> </p>
+                <p class="referencia">2. Wackerly, D. D., Mendenhall, W., Scheaffer, R. L. (2008). Estadística matemática con aplicaciones (7.a ed.). Ejercicio 3.103, p 128</p>
+
+            </article>
+
+        </div>
+    </div>
+</body>
+</html>
